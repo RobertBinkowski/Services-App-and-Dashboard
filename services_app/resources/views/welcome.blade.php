@@ -533,7 +533,14 @@
                     </div>
                 </div>
             </div>
-
+            @php
+                //Database Connection Check Done
+                $users = DB::select('SELECT * FROM `servicesapp`.`customer` LIMIT 1000;');
+                foreach ($users as $customer => $value) {
+                    echo '<br>';
+                    echo $value->Name;
+                }
+            @endphp
             <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                 <div class="text-center text-sm text-gray-500 sm:text-left">
                     <div class="flex items-center">
